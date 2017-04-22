@@ -17,11 +17,12 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<!-- /Boostrap CDN -->
 
-	<link rel="stylesheet" href="css/mystyle.css">
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/mystyle.css') }}">
 
 	<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?&libraries=visualization">
 	</script>
-    <script src="js/Heatmap.js"></script>
+	<script src="{{ url_for('static', filename='data/filteredCrimeData.json') }}"></script>
+    <script src="{{ url_for('static', filename='js/Heatmap.js') }}"></script>
 
   </head>
 
@@ -43,7 +44,7 @@
   <div class = "row">
   		<div class = "col-md-2">
   			<div id ="map_box" class ="row">
-
+			<div id="map"></div>
         </div>
         <div class ="row">
             <h3> hello </h3>
@@ -53,11 +54,12 @@
   		</div>
   		<div class = "col-md-8">
   			<h3 class="page-header margin"></h3>
-	  		<div id="map"></div>
+	  		
   		</div>
   		<div class = "col-md-2">
         <div id ="assistance_box">
-          <div class="paribas bounce"></div>
+          <!-- <div class="paribas bounce"></div> -->
+          ;lkasdjklsdfjkl
         </div>
 			<div id = "info" style="background-color: red"></div>
   		</div>

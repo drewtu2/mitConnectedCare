@@ -4,7 +4,7 @@ import os
 
 #subprocess.call("../connected.setup", shell=True )
 
-csv = os.environ["PWD"] + "/../data/crimeData.csv"
+csv = os.environ["PWD"] + "/static/data/crimeData.csv"
 
 df = pd.read_csv(csv)
 print(df)
@@ -16,7 +16,7 @@ df.dropna(subset=["LAT", "LONG"], inplace=True)
 print(df)
 jsonString = df.to_json()
 
-with open("filteredCrimeData.json", "w") as the_file:
+with open("static/data/filteredCrimeData.json", "w") as the_file:
   the_file.write("var filteredData = " + jsonString)
 
 
