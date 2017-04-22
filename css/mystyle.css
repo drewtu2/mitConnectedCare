@@ -1,0 +1,19 @@
+body,html {
+	height:93%;
+}
+.margin-top {
+	margin-top: 50px;
+}
+.content {
+	height: 100%;	
+}
+footer {
+	background-color: #2f2f2f; /* Black Gray */
+	color: white;
+	height: 8%;
+}
+
+#map {
+	height: 300px;
+	width: 100%;
+}
