@@ -1,0 +1,4 @@
+
+CONNECTED_HOME=$(pwd)
+
+echo $CONNECTED_HOME
