@@ -34,8 +34,21 @@ body,html {
 	margin-top: 0px;
 }
 
+.no-margin {
+	margin-top: 0px;
+	margin-bottom: 0px;
+	margin-left: 0px;
+	margin-right: 0px;
+}
+
 .content {
 	height: 100%;
+}
+.full-height{
+	height:100%;
+}
+.inherit-height{
+	height:inherit;
 }
 footer {
 	background-color: #2f2f2f; /* Black Gray */
@@ -54,10 +67,10 @@ footer {
 }
 
 #map_box{
-	margin-left: 0%;
-	margin-top: 10px;
-	width: 300px;
-	height: 300px;
+	margin-left: 10%;
+	margin-top: 10%;
+	width: 100%;
+	height: 25%;
 	background-color: white;
 	
 

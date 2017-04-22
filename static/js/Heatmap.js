@@ -21,10 +21,12 @@
 	  console.log("Hello world");	
 	
     if (navigator && navigator.geolocation) {
-    var watchId = navigator.geolocation.watchPosition(successCallback, 
+    /*var watchId = navigator.geolocation.watchPosition(successCallback, 
                                                       errorCallback,
-                                                      {enableHighAccuracy:true,timeout:60000,maximumAge:0});
-
+                                                      {enableHighAccuracy:true,timeout:60000,maximumAge:0});*/
+    var watchId = navigator.geolocation.getCurrentPosition(successCallback, 
+            errorCallback);
+    
     } else {
       console.log('Geolocation is not supported');
     }
@@ -39,13 +41,19 @@
    */
   function successCallback(position) {
 	
-    myLatLng = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
-
+    //myLatLng = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
+	  myLatLng = new google.maps.LatLng(42.354430, -71.064871);
     // To be run the first time the callback is called. (Creates the map object)
     if(map == undefined) {
       var myOptions = {
-        zoom: 15,
+        zoom: 14,
         center: myLatLng,
+        zoomControl: true,
+        mapTypeControl: false,
+        scaleContro: false,
+        fullscreenControl: false,
+        rotateControl: false,
+        streetViewControl: false,
         mapTypeId: google.maps.MapTypeId.ROADMAP
       }
       map = new google.maps.Map(document.getElementById("map_box"), myOptions);
