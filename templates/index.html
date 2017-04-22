@@ -6,7 +6,7 @@
 <head>
 	<title>nuvision</title>
 	<meta charset="utf-8">
-	
+
 	<!-- Boostrap CDN -->
 	<!-- Latest compiled and minified CSS -->
 	<link rel="stylesheet"
@@ -19,10 +19,10 @@
 		src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<!-- /Boostrap CDN -->
-	
+
 	<link rel="stylesheet"
 		href="{{ url_for('static', filename='css/mystyle.css') }}">
-	
+
 	<script type="text/javascript"
 		src="https://maps.googleapis.com/maps/api/js?&libraries=visualization">
 		</script>
@@ -44,15 +44,15 @@
 
 	<div id="video">
 		<!-- Uncomment to allow background to be set -->
-		<!-- <img id="stream"
-			 src="http://192.168.1.9:88/cgi-bin/CGIStream.cgi?cmd=GetMJStream&usr=nuvision&pwd=nuvision"></img> -->
+		<img id="stream"
+			 src="http://192.168.1.9:88/cgi-bin/CGIStream.cgi?cmd=GetMJStream&usr=nuvision&pwd=nuvision"></img>
 	</div>
-	
+
 	<div class="container no-margin content full-height">
 
 		<div class="row inherit-height">
 			<div class="col-sm-3 inherit-height">
-				<div id="map_box" class="row"></div>
+				<div class = "circle" id="map_box" class="row"></div>
 				<div class="row"></div>
 			</div>
 			<div class="col-md-6"></div>
