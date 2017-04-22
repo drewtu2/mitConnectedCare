@@ -8,6 +8,31 @@
   var map;
   var myLatLng
   
+  /*
+   * List of Friends
+   * [{name:"John Smith", location:(0,0)},
+   * {name:"John Smith", location:(0,0)},
+   * {name:"John Smith", location:(0,0)}]
+   */
+  
+  /*
+   * List of Recommendations  
+   * [{name:"Ben and Jerys", location:(0,0)},
+   * {name:"Ben and Jerys", location:(0,0)},
+   * {name:"Ben and Jerys", location:(0,0)}]
+   */
+  
+  var recList = [{name:"Toscis", location:new google.maps.LatLng(42.363424, -71.099379)},
+                 {name:"Ben and Jerys", location:new google.maps.LatLng(42.348133, -71.084497)},
+                 {name:"JP Licks", location:new google.maps.LatLng(42.346997, -71.088657)}];
+  
+  var friendList = [{name:"Mark Hunter", location:new google.maps.LatLng(42.351007, -71.084591)},
+                    {name:"Paul Langton", location:new google.maps.LatLng(42.357802, -71.053808)},
+                    {name:"Andrew Tu", location:new google.maps.LatLng(42.359042, -71.095111)}];
+  
+  var testObj = {name:"Andrew Tu", location:new google.maps.LatLng(42.359042, -71.095111)};
+  
+  
   $(document).ready(function(){
 	
   });
@@ -57,20 +82,25 @@
         mapTypeId: google.maps.MapTypeId.ROADMAP
       }
       map = new google.maps.Map(document.getElementById("map_box"), myOptions);
-      /* Data points defined as an array of LatLng objects */
-      var heatmapData = genHeatMapData();
-      console.log(heatmapData)
-      console.log([1,2,3])
+      
+      addHeatmap(map);
+      setListMarkers(map, recList, "../images/wine.png");
+      setListMarkers(map, friendList, "../images/friend.png");
+      //setMarker(map, testObj, "../images/friend.png")
+      }
+      
+    //else map.panTo(myLatlng);      
+  }
+  
+  function addHeatmap(map){
+	  /* Data points defined as an array of LatLng objects */
+	  var heatmapData = genHeatMapData();
       var heatmap = new google.maps.visualization.HeatmapLayer({
         data: heatmapData,
         maxIntensity: 100,
         radius: 15
       });
-      console.log(heatmap)
       heatmap.setMap(map);
-      }
-      
-    //else map.panTo(myLatlng);      
   }
   
   function genHeatMapData() {
@@ -82,7 +112,7 @@
 		  if(listOfLat.hasOwnProperty(key) && listOfLong.hasOwnProperty(key)){
 			  mapData.push(loc2GoogleLoc(listOfLat[key], listOfLong[key]))
 		  } else {
-			  console.log("Invalid")
+			  console.log("Invalid Data")
 		  }
 
 	  }
@@ -97,5 +127,39 @@
 	  //latlng = {"lat": lat, "long": long}
 	  return latlng
   }
-
+  
+  function setListMarkers(map, listOfStuff, url){
+	  console.log(listOfStuff)
+	  for(index in listOfStuff){
+		setMarker(map, listOfStuff[index], url)  
+	  }
+  }
+  
+  function setMarker(map, inObj, imageUrl) {
+	  console.log(inObj)
+	  var markerPlace = {
+			  location: inObj.location,
+			  query: inObj.name 
+	  }
+	  var markerOptions = {
+			  title: inObj.name,
+			  position: inObj.location,
+			  place: markerPlace,
+	    	  map: map,
+	    	  icon: imageUrl
+	  }
+      var marker = new google.maps.Marker(markerOptions)
+	  
+	  // Pop up window with more information about the printers
+	  var windowOptions = {
+		  content: inObj.name,
+		  position: inObj.location
+	  }
+	  var infoWindow = new google.maps.InfoWindow(windowOptions);
+	  
+	  marker.addListener('click', function() {
+		    infoWindow.open(map, marker);
+		  });
+	  
+  }
   
