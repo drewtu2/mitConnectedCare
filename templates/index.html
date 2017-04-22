@@ -39,22 +39,22 @@
 
   <div id
   ="video">
-  <!--<IFRAME
-  src="http://192.168.1.2:88/cgi-bin/CGIStream.cgi?cmd=GetMJStream&usr=nuvision&pwd=nuvision"
-  align="center" width="100%"  height="100%" scrolling="no" frameborder=no marginheight="0px"</IFRAME>-->
+  <IFRAME
+  src="http://192.168.1.9:88/cgi-bin/CGIStream.cgi?cmd=GetMJStream&usr=nuvision&pwd=nuvision"
+  align="center" width="100%"  height="100%" scrolling="no" frameborder=no marginheight="0px"</IFRAME>
 	<div class="container no-margin content full-height">
 
   <div class = "row inherit-height">
-  		<div class = "col-md-3 inherit-height">
+  		<div class = "col-sm-3 inherit-height">
   			<div id ="map_box" class ="row"></div>
         	<div class ="row"></div>
   		</div>
   		<div class = "col-md-6">
 
   		</div>
-  		<div class = "col-md-3">
+  		<div class = "col-sm-3">
         <div id ="assistance_box">
-          <!-- <div class="paribas bounce"></div> -->
+          <img width=100% src="{{ url_for('static', filename='resources/dogtransfinal.gif') }}">
         </div>
 			<div id = "info" style="background-color: red"></div>
   		</div>

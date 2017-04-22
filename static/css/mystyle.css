@@ -1,32 +1,3 @@
-.paribas {
-  position: fixed;
-  bottom: 0;
-  right: 10%;
-  margin-left: 10%;
-  width: 100%;
-  height: 100%;
-  background-image: url(../resources/paribaslogo.png);
-  margin-bottom:10%;
-  animation-fill-mode: both;
-  animation: mymove 1s infinite;
-}
-
-        @-webkit-keyframes bounce {
-            0%, 20%, 50%, 80%, 100% {-webkit-transform: translateY(0);}
-            40% {-webkit-transform: translateY(-30px);}
-            60% {-webkit-transform: translateY(-15px);}
-         }
-
-         @keyframes bounce {
-            0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
-            40% {transform: translateY(-30px);}
-            60% {transform: translateY(-15px);}
-         }
-
-.bounce {
-  -webkit-animation-name: bounce;
-  animation-name: bounce;
-}
 body,html {
 	height:100%;
 }
@@ -34,28 +5,14 @@ body,html {
 	margin-top: 0px;
 }
 
-.no-margin {
-	margin-top: 0px;
-	margin-bottom: 0px;
-	margin-left: 0px;
-	margin-right: 0px;
-}
-
 .content {
 	height: 100%;
-}
-.full-height{
-	height:100%;
-}
-.inherit-height{
-	height:inherit;
 }
 footer {
 	background-color: #2f2f2f; /* Black Gray */
 	color: white;
 	height: 8%;
 }
-
 
 
 #video{
@@ -67,22 +24,18 @@ footer {
 }
 
 #map_box{
-	margin-left: 10%;
-	margin-top: 10%;
-	width: 100%;
-	height: 25%;
+	margin-left: 0%;
+	margin-top: 10px;
+	width: 300px;
+	height: 300px;
 	background-color: white;
-	
 
 }
 
 #assistance_box{
-	margin-right: 0px;
-	margin-top: 10px;
-	width: 200px;
-	height: 200px;
-	border: 5px solid #000;
-	background-color: white;
+	right: 5%;
+	width: 50%;
+	height: 50%;
 }
 
 #map {
