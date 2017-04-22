@@ -1,12 +1,12 @@
-<!-- 
-	 
+<!--
+
  -->
 <!DOCTYPE html>
 <html>
   <head>
     <title>nuvision</title>
     <meta charset="utf-8">
-    
+
     <!-- Boostrap CDN -->
     <!-- Latest compiled and minified CSS -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -16,46 +16,58 @@
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<!-- /Boostrap CDN -->
-	
+
 	<link rel="stylesheet" href="css/mystyle.css">
-    
-    
+
+
     <script src="js/Heatmap.js"></script>
-    
+
   </head>
-  
+
   <body onload="javascript:initGeolocation()">
-  	<!---------- Navbar ---------->
- 	<nav class="navbar navbar-default navbar-fixed-top">
+  	<!-- -------- Navbar ---------->
+ 	<!-- <nav class="navbar navbar-default navbar-fixed-top">
 		<div class="container">
-			<div class="navbar-header" id="nav-head">		
+			<div class="navbar-header" id="nav-head">
 				<a class="navbar-brand">nuvision</a>
 			</div>
 		</div>
-	</nav>
-	<!---------- /Navbar ---------->
-	
+	</nav> -->
+	<!---------- /Navbar -------- -->
+
+  <div id
+  ="video">
 	<div class="container margin-top content">
-	<div class = "row">
+
+  <div class = "row">
   		<div class = "col-md-2">
-  			<h3 class="page-header margin">Locations</h3>
-  			
+  			<div id ="map_box" class ="row">
+
+        </div>
+        <div class ="row">
+            <h3> hello </h3>
+
+        </div>
+
   		</div>
-  		<div class = "col-md-5">
-  			<h3 class="page-header margin">Locator</h3>
+  		<div class = "col-md-8">
+  			<h3 class="page-header margin"></h3>
 	  		<div id="map"></div>
   		</div>
-  		<div class = "col-sm-4 col-md-5">
-  			<h3 class="page-header margin">Locator</h3>
+  		<div class = "col-md-2">
+        <div id ="assistance_box">
+
+        </div>
 			<div id = "info" style="background-color: red"></div>
   		</div>
-    </div>	 
+    </div>
+  </div>
 	</div>
-    
+
   </body>
   <!----------- FOOTER -------------->
-	<footer id="FOOTER" class="container-fluid text-center">
-		Built for 2017 MIT Design Connected Care Hackathon
-	</footer><!----------- /FOOTER -------------->
-  
+	<!-- <footer id="FOOTER" class="container-fluid text-center">
+		Built for 2017 MIT Design Connected Care Hackathon -->
+	<!-- </footer>----------- /FOOTER -------------->
+
 </html>
