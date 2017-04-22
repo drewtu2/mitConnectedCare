@@ -48,7 +48,7 @@
         center: myLatLng,
         mapTypeId: google.maps.MapTypeId.ROADMAP
       }
-      map = new google.maps.Map(document.getElementById("map"), myOptions);
+      map = new google.maps.Map(document.getElementById("map_box"), myOptions);
       /* Data points defined as an array of LatLng objects */
       var heatmapData = genHeatMapData();
       console.log(heatmapData)

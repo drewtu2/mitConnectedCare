@@ -52,12 +52,12 @@ footer {
 	margin-left: 0px;
 	margin-right: 0px;
 }
+
 #map_box{
 	margin-left: 0%;
 	margin-top: 10px;
-	width: 200px;
-	height: 200px;
-	border: 5px solid #000;
+	width: 300px;
+	height: 300px;
 	background-color: white;
 	
 
