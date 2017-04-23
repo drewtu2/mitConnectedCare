@@ -2,7 +2,9 @@ var recList = [{name:"Toscis", location:new google.maps.LatLng(42.363424, -71.09
                  {name:"Ben and Jerys", location:new google.maps.LatLng(42.348133, -71.084497)},
                  {name:"JP Licks", location:new google.maps.LatLng(42.346997, -71.088657)}];
 var count = 0;
-var recMarkerList= []
+var recMarkerList= [];
+var currentNotification;
+var faceBank = {};
 
 function handleNotification(message){
 	activateDog()
@@ -22,7 +24,10 @@ function handleNotification(message){
     } else if (message == "removeMarkers") {
     	setMapOnAll(null);
     	recMarkerList= []
-    }
+    } else {// is a facedata from message!
+    	jsonstuff = JSON.parse(message); 
+    	addToFacebank(jsonstuff["data"][0], "", jsonstuff["data"][1])
+	}
 }
 
 function activateDog(){
@@ -34,3 +39,29 @@ function deactivateDog(){
 	document.getElementById("dog").src="../images/dogstatic.png";
 }
 
+/* 
+ * A notification is a
+ * {
+ * 	title:<string>,
+ * 	description:<string>,
+ * 	url:<url>
+ * }
+ */
+
+/*
+ * Adds/updates a person to the faceBank
+ */
+function addToFacebank(name, descripion, url){
+	faceBank.[name] = createNotification(name, description, url);
+}
+
+/*
+ * Creates and returns a notification object
+ */
+function createNotification(title, description, url){
+	obj = {"title":title, 
+			"description": description,
+			"url": url}
+	
+	return obj
+}
