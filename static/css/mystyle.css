@@ -2,9 +2,15 @@
 body,html {
 	height:100%;
 }
+
 /*removes google logo from maps*/
-a[href^="http://maps.google.com/maps"]{display:none !important}
-a[href^="https://maps.google.com/maps"]{display:none !important}
+a[href^="http://maps.google.com/maps"]{
+	display:none !important
+	}
+	
+a[href^="https://maps.google.com/maps"]{
+	display:none !important
+	}
 
 .gmnoprint a, .gmnoprint span, .gm-style-cc {
     display:none;

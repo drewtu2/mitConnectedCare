@@ -1,5 +1,7 @@
 .project
 venv/*
+venv2.7/*
 *.swp
 __pycache__/*
-app.pyc
+*.pyc
+desktop.ini
