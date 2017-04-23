@@ -7,7 +7,7 @@ body,html {
 a[href^="http://maps.google.com/maps"]{
 	display:none !important
 	}
-	
+
 a[href^="https://maps.google.com/maps"]{
 	display:none !important
 	}
@@ -84,7 +84,7 @@ footer {
 }
 
 #video{
-	background-color: red;
+	background-color: blue;
 	height: 100%;
 	width: 100%;
 	margin-left: 0px;
