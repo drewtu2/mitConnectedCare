@@ -12,12 +12,7 @@ sys.path.append("/scripts/")
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'secret!'
 socketio = SocketIO(app)
-prod = 'PROD' in os.environ and os.environ['PROD'] in [1, 'true', ]
-
-if prod:
-    video = "<img id='stream' src='http://192.168.1.9:88/cgi-bin/CGIStream.cgi?cmd=GetMJStream&usr=nuvision&pwd=nuvision'></img>"
-else:
-    video = ""
+prod = 'PROD' in os.environ and os.environ['PROD'] in [1, 'true', 'True']
 
 @app.route('/')
 def index():
