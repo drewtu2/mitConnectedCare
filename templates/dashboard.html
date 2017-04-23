@@ -1,7 +1,8 @@
 <html>
   <title>Dashboard</title>
 
-<font color="red">Note: Reloading page sends most recent command again/makes dog animation start</font><br><br>
+<font color="red">Note: Reloading page sends most recent command again/makes dog animation start</font><br>
+<font color="red">Note: Don't click drop food location more than 3 times otherwise we can't clear all pins</font><br><br>
 
   <form action="/dashboard" method="GET">
     <input type="hidden" name="command" value="center">
@@ -14,8 +15,13 @@
   </form>
 
   <form action="/dashboard" method="GET">
-    <input type="hidden" name="command" value="dropLocation">
-    <input type="submit" value="Drop Location Marker">
+    <input type="hidden" name="command" value="homeAlert">
+    <input type="submit" value="Send Garage Door Alert">
+  </form>
+  
+  <form action="/dashboard" method="GET">
+    <input type="hidden" name="command" value="childAlert">
+    <input type="submit" value="Send Jacob is Home Alert">
   </form>
 
   <form action="/dashboard" method="GET">
@@ -36,6 +42,11 @@
   <form action="/dashboard" method="GET">
     <input type="hidden" name="command" value="removeFacebank">
     <input type="submit" value="Remove Facebank">
+  </form>
+  
+  <form action="/dashboard" method="GET">
+    <input type="hidden" name="command" value="displayManual">
+    <input type="submit" value="Manual Update Facebank">
   </form>
 
 

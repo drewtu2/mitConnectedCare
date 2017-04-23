@@ -15,6 +15,7 @@ var faceBank = {};
 
 function handleNotification(message) {
 	activateDog()
+	try{
 	if (message == "center") {
 		moveMap("home");
 	} else if (message == "danger") {
@@ -22,9 +23,10 @@ function handleNotification(message) {
 		notif = createNotification("Warning",
 				"You are nearing a high crime area!", "../images/warning64.png")
 		activateNotif("notificationarea", notif)
-	} else if (message == "dropLocation") {
+	} else if (message == "food") {
 		index = count
-		recMarkerList.push(apiDropMarker(recList[index]))
+		newMarker = apiDropMarker(recList[index])
+		recMarkerList.push(newMarker)
 		notif = createNotification("Try this!",
 				"Mom thought you might be interested in some ice-cream!",
 				"../images/ice-cream.png")
@@ -35,7 +37,6 @@ function handleNotification(message) {
 			count = count + 1;
 		}
 	} else if (message == "weather") {
-		index = count
 		notif = createNotification("Weather Alert!",
 				"Looking a little Rainy today!", "../images/cloud.png")
 		activateNotif("notificationarea", notif)
@@ -44,10 +45,24 @@ function handleNotification(message) {
 		recMarkerList = []
 	} else if (message == "removeFacebank") {
 		wipeFacebank();
-	} else {// is a facedata from message!
+	} else if (message == "homeAlert"){
+		notif = createNotification("Home Alert!",
+				"Garage door just opened!", "../images/house.png")
+		activateNotif("notificationarea", notif)
+	} else if (message == "childAlert"){
+		notif = createNotification("Jacob's Home",
+				"Jacob just got home from school!", "../images/boy.png")
+		activateNotif("notificationarea", notif)
+	}else if (message == "displayManual"){
+		displayFacebank();
+	}  
+	else {// is a facedata from message!
 		jsonstuff = JSON.parse(message);
 		addToFacebank(jsonstuff["data"][0], "", jsonstuff["data"][1])
-		displayFacebank()
+		window.setTimeout(displayFacebank, 5000);
+	}
+	} catch (error) {
+		console.log(error);
 	}
 }
 
