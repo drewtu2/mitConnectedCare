@@ -1,7 +1,42 @@
 <html>
   <title>Dashboard</title>
+
+<font color="red">Note: Reloading page sends most recent command again/makes dog animation start</font><br><br>
+
   <form action="/dashboard" method="GET">
-    <input type="text" name="command"><br>
-    <input type="submit">
+    <input type="hidden" name="command" value="center">
+    <input type="submit" value="Center Map">
   </form>
+
+  <form action="/dashboard" method="GET">
+    <input type="hidden" name="command" value="danger">
+    <input type="submit" value="Send Danger Alert">
+  </form>
+
+  <form action="/dashboard" method="GET">
+    <input type="hidden" name="command" value="dropLocation">
+    <input type="submit" value="Drop Location Marker">
+  </form>
+
+  <form action="/dashboard" method="GET">
+    <input type="hidden" name="command" value="food">
+    <input type="submit" value="Send Food Notification">
+  </form>
+
+  <form action="/dashboard" method="GET">
+    <input type="hidden" name="command" value="weather">
+    <input type="submit" value="Send Weather Notification">
+  </form>
+
+  <form action="/dashboard" method="GET">
+    <input type="hidden" name="command" value="removeMarkers">
+    <input type="submit" value="Remove Markers">
+  </form>
+
+  <form action="/dashboard" method="GET">
+    <input type="hidden" name="command" value="removeFacebank">
+    <input type="submit" value="Remove Facebank">
+  </form>
+
+
 </html>
