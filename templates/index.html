@@ -1,34 +1,52 @@
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/socket.io/1.3.6/socket.io.min.js"></script>
+<script type="text/javascript" charset="utf-8">
+    var socket = io.connect('http://' + document.domain + ':' + location.port);
+    socket.on('channel-a', function(message) {
+        console.log("COMMAND RECEIVED: " + message);
+        if (message == "displayOn") {
+
+        } else if (message == "displayOff") {
+
+        }
+    });
+</script>
+
 <!--
 
  -->
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>nuvision</title>
-    <meta charset="utf-8">
+<head>
+	<title>nuvision</title>
+	<meta charset="utf-8">
 
-    <!-- Boostrap CDN -->
-    <!-- Latest compiled and minified CSS -->
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<!-- Boostrap CDN -->
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet"
+		href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 	<!-- jQuery library -->
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+	<script
+		src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
 	<!-- Latest compiled JavaScript -->
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script
+		src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<!-- /Boostrap CDN -->
 
-	<link rel="stylesheet" href="{{ url_for('static', filename='css/mystyle.css') }}">
+	<link rel="stylesheet"
+		href="{{ url_for('static', filename='css/mystyle.css') }}">
 
-	<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?&libraries=visualization">
-	</script>
-	<script src="{{ url_for('static', filename='data/filteredCrimeData.json') }}"></script>
-    <script src="{{ url_for('static', filename='js/Heatmap.js') }}"></script>
+	<script type="text/javascript"
+		src="https://maps.googleapis.com/maps/api/js?&libraries=visualization">
+		</script>
+	<script
+		src="{{ url_for('static', filename='data/filteredCrimeData.json') }}"></script>
+	<script src="{{ url_for('static', filename='js/Heatmap.js') }}"></script>
+</head>
 
-  </head>
-
-  <body onload="javascript:initGeolocation()">
-  	<!-- -------- Navbar ---------->
- 	<!-- <nav class="navbar navbar-default navbar-fixed-top">
+<body onload="javascript:initGeolocation()">
+	<!-- -------- Navbar ---------->
+	<!-- <nav class="navbar navbar-default navbar-fixed-top">
 		<div class="container">
 			<div class="navbar-header" id="nav-head">
 				<a class="navbar-brand">nuvision</a>
@@ -37,35 +55,32 @@
 	</nav> -->
 	<!---------- /Navbar -------- -->
 
-  <div id
-  ="video">
-  <IFRAME
-  src="http://192.168.1.9:88/cgi-bin/CGIStream.cgi?cmd=GetMJStream&usr=nuvision&pwd=nuvision"
-  align="center" width="100%"  height="100%" scrolling="no" frameborder=no marginheight="0px"</IFRAME>
-	<div class="container no-margin content full-height">
-
-  <div class = "row inherit-height">
-  		<div class = "col-sm-3 inherit-height">
-  			<div id ="map_box" class ="row"></div>
-        	<div class ="row"></div>
-  		</div>
-  		<div class = "col-md-6">
-
-  		</div>
-  		<div class = "col-sm-3">
-        <div id ="assistance_box">
-          <img width=100% src="{{ url_for('static', filename='resources/dogtransfinal.gif') }}">
-        </div>
-			<div id = "info" style="background-color: red"></div>
-  		</div>
-    </div>
-  </div>
+	<div id="video">
+		<!-- Uncomment to allow background to be set -->
+		<img id="stream"
+			 src="http://192.168.1.9:88/cgi-bin/CGIStream.cgi?cmd=GetMJStream&usr=nuvision&pwd=nuvision"></img>
 	</div>
 
-  </body>
-  <!----------- FOOTER -------------->
-	<!-- <footer id="FOOTER" class="container-fluid text-center">
+	<div class="container no-margin content full-height">
+		<div class="row inherit-height">
+			<div class="col-md-3 inherit-height">
+				<div class = "circle" id="map_box" class="row"></div>
+			</div>
+			<div class="col-md-6"></div>
+			<div class="col-md-3">
+				<div id="assistance_box">
+					<img id="dog" width=100%
+						src="{{ url_for('static', filename='images/dogstatic.png') }}">
+				</div>
+				<div id="info" style="background-color: red"></div>
+			</div>
+		</div>
+	</div>
+
+</body>
+<!----------- FOOTER -------------->
+<!-- <footer id="FOOTER" class="container-fluid text-center">
 		Built for 2017 MIT Design Connected Care Hackathon -->
-	<!-- </footer>----------- /FOOTER -------------->
+<!-- </footer>----------- /FOOTER -------------->
 
 </html>
