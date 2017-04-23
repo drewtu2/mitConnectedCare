@@ -6,7 +6,10 @@
 	*/
 
   var map;
-  var myLatLng
+  var myLatLng;
+  
+  // Global Map only to be used in special occasions
+  var SuperSecretMap;
   
   /*
    * List of Friends
@@ -82,9 +85,9 @@
         mapTypeId: google.maps.MapTypeId.ROADMAP
       }
       map = new google.maps.Map(document.getElementById("map_box"), myOptions);
-      
+      SuperSecretMap = map;
       addHeatmap(map);
-      setListMarkers(map, recList, "../images/wine.png");
+      //setListMarkers(map, recList, "../images/wine.png");
       setListMarkers(map, friendList, "../images/friend.png");
       //setMarker(map, testObj, "../images/friend.png")
       }
@@ -106,7 +109,7 @@
   function genHeatMapData() {
 	  listOfLat = filteredData.LAT
 	  listOfLong = filteredData.LONG
-	  console.log(listOfLat)
+	  //console.log(listOfLat)
 	  mapData = []
 	  for(var key in listOfLat) {
 		  if(listOfLat.hasOwnProperty(key) && listOfLong.hasOwnProperty(key)){
@@ -129,14 +132,19 @@
   }
   
   function setListMarkers(map, listOfStuff, url){
-	  console.log(listOfStuff)
+	  //console.log(listOfStuff)
 	  for(index in listOfStuff){
 		setMarker(map, listOfStuff[index], url)  
 	  }
   }
   
+  function apiDropMarker(inObj) {
+	  moveMap(inObj.location)
+	  return setMarker(SuperSecretMap, inObj, "../images/wine.png");
+  }
+  
   function setMarker(map, inObj, imageUrl) {
-	  console.log(inObj)
+	  //console.log(inObj)
 	  var markerPlace = {
 			  location: inObj.location,
 			  query: inObj.name 
@@ -146,6 +154,7 @@
 			  position: inObj.location,
 			  place: markerPlace,
 	    	  map: map,
+	    	  animation: google.maps.Animation.DROP,
 	    	  icon: imageUrl
 	  }
       var marker = new google.maps.Marker(markerOptions)
@@ -160,6 +169,19 @@
 	  marker.addListener('click', function() {
 		    infoWindow.open(map, marker);
 		  });
-	  
+	  return marker
   }
   
+  function moveMap(location) {
+	  if(location == "home"){
+		  SuperSecretMap.setCenter(myLatLng)  
+	  } else {
+		  SuperSecretMap.setCenter(location)
+	  }
+  }
+  
+  function setMapOnAll(map) {
+	    for (var i = 0; i < recList.length; i++) {
+	      recMarkerList[i].setMap(map);
+	    }
+	  }
