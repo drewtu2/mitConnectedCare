@@ -51,6 +51,7 @@ def processImage():
     try:
         data = kairos_face.recognize_face(file=latestImage, gallery_name='nuvision')
         print data
+        #status =data[u'images'][0][u'transaction'][u'topLeftY']
         topLeftY = data[u'images'][0][u'transaction'][u'topLeftY']
         topLeftX = data[u'images'][0][u'transaction'][u'topLeftX']
         width = data[u'images'][0][u'transaction'][u'width']
@@ -60,8 +61,9 @@ def processImage():
         banked = still.crop((topLeftX, topLeftY, topLeftX + width, topLeftY + height))
         scale = width/topLeftY
         banked = banked.resize(int(scale*width), int(scale*height))
+        #scaled = banked.thumbnail(100, Image.ANTIALIAS)
         banked.save(output + person + "Banked.jpg")
-        app.sendCommand(json.loads(json.dumps({"command":"new_bank", "data":(person, output + person + "Banked.jpg")})))
+        app.sendCommandAPI(person, output)
         print data
         print "Recognized " + person + ". Hi " + person + "!"
     except Exception as e:
