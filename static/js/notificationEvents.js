@@ -61,9 +61,9 @@ function handleNotification(message) {
 		// addToFacebank(jsonstuff["data"][0], "", jsonstuff["data"][1])
 		addToFacebank(message.substring(12))
 		displayFacebank();
-		window.setTimeout(displayFacebank, 3000);
+		/*window.setTimeout(displayFacebank, 3000);
 		window.setTimeout(displayFacebank, 5000);
-		window.setTimeout(displayFacebank, 7000);
+		window.setTimeout(displayFacebank, 7000);*/
 	}
 	} catch (error) {
 		console.log(error);
@@ -162,7 +162,6 @@ function wipeFacebank() {
 	document.getElementById("facebankContainer").innerHTML = "";
 }
 
-//TODO: Finish this function
 function viewNotif(notifModel) {
 	var notifView = "<div class=\"row notification\">\
 	<div class=\"col-md-3\">\
