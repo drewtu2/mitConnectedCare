@@ -19,7 +19,8 @@
 <head>
 	<title>nuvision</title>
 	<meta charset="utf-8">
-
+  <!-- google open sans font-->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
 	<!-- Boostrap CDN -->
 	<!-- Latest compiled and minified CSS -->
 	<link rel="stylesheet"
@@ -68,10 +69,28 @@
 			</div>
 			<div class="col-md-6"></div>
 			<div class="col-md-3">
+        <div class="row">
 				<div id="assistance_box">
 					<img id="dog" width=100%
 						src="{{ url_for('static', filename='images/dogstatic.png') }}">
 				</div>
+      </div>
+
+        <div id = "notificationarea">
+            <div class="row notification">
+                <div class="col-md-3">
+                    <div class="picture">
+                        <div id="thepic">
+                          <h3>Pic</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-9 text_notifaction">
+                    <strong>User Name</strong><br>
+                      <span>info</span>
+                </div>
+        </div>
+        </div>
 				<div id="info" style="background-color: red"></div>
 			</div>
 		</div>
