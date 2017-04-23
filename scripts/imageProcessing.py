@@ -59,8 +59,8 @@ def processImage():
         person = data[u'images'][0][u'transaction'][u'subject_id']
         still = Image.open(latestImage)
         banked = still.crop((topLeftX, topLeftY, topLeftX + width, topLeftY + height))
-        scale = width/topLeftY
-        banked = banked.resize(int(scale*width), int(scale*height))
+        # scale = width/topLeftY
+        # banked = banked.resize(int(scale*width), int(scale*height))
         #scaled = banked.thumbnail(100, Image.ANTIALIAS)
         banked.save(output + person + "Banked.jpg")
         app.sendCommandAPI(person, output)
