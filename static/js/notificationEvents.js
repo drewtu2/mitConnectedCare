@@ -74,7 +74,7 @@ function addToFacebank(name, descripion, url){
     default:
     	descripion = "New Challenger!"
 	}
-	faceBank.[name] = createNotification(name, description, url);
+	faceBank[name] = createNotification(name, description, url);
 }
 
 /*
