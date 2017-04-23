@@ -43,7 +43,7 @@ function deactivateDog(){
 
 function activateNotif(id, notifModel){
 	document.getElementById(id).appendChild(viewNotif(notifModel));
-	window.setTimeout(function{deactivateNotif(id)}, 5000);
+	window.setTimeout(function(){deactivateNotif(id)}, 5000);
 }
 
 function deactivateNotif(id){
