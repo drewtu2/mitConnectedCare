@@ -2,4 +2,5 @@
 venv/*
 *.swp
 __pycache__/*
-app.pyc
+*.pyc
+desktop.ini
