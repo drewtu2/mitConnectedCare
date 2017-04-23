@@ -35,18 +35,21 @@ def dashboard():
 
 @socketio.on('channel-a')
 def sendCommand(message):
-  socketio.emit("channel-a", message)
+    print "SENDING COMMAND"
+    socketio.emit("channel-a", message)
 
-  if __name__ == '__main__':
+if __name__ == '__main__':
     app.debug = True
-    socketio.run(app, port=5000)\
+    socketio.run(app, port=5000)
 
 
 if prod:
     print "Facial recognition status: ON"
     imageProcessing.init(False)
-    while(True):
-        time.sleep(1.5)
-        imageProcessing.processImage()
+    pid = os.fork()
+    if pid == 0: # child processImage
+        while(True):
+            time.sleep(1.5)
+            imageProcessing.processImage()
 else:
     print "Facial recognition status: OFF"
