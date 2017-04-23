@@ -52,6 +52,28 @@ function deactivateDog(){
  * Adds/updates a person to the faceBank
  */
 function addToFacebank(name, descripion, url){
+	switch(name) {
+    case "Andrew":
+    	descripion = "Northeastern Student"
+        break;
+    case "Mark":
+    	descripion = "Northeastern Student"
+        break;
+    case "Paul":
+    	descripion = "Northeastern Student"
+        break;
+    case "Nick":
+    	descripion = "Northeastern Student"
+        break;
+    case "Meg":
+    	descripion = "MIT Design student and Mentor"
+        break;
+    case "Federico":
+    	descripion = "Director of MIT Media Labs"
+        break;
+    default:
+    	descripion = "New Challenger!"
+	}
 	faceBank.[name] = createNotification(name, description, url);
 }
 
