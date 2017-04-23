@@ -5,12 +5,11 @@ var count = 0;
 var recMarkerList= []
 
 function handleNotification(message){
-	
-	
-	if (message == "displayOn") {
-		
-    } else if (message == "displayOff") {
-
+	activateDog()
+	if (message == "center") {
+    	moveMap("home");
+    } else if (message == "danger") {
+		// Alert to Danger!
     } else if (message == "dropLocation") {
     	index = count
     	recMarkerList.push(apiDropMarker(recList[index]))
@@ -26,8 +25,12 @@ function handleNotification(message){
     }
 }
 
-function setMapOnAll(map) {
-    for (var i = 0; i < recList.length; i++) {
-      recMarkerList[i].setMap(map);
-    }
-  }
+function activateDog(){
+	document.getElementById("dog").src="../images/dogmoving.gif";
+	window.setTimeout(deactivateDog, 5000);
+}
+
+function deactivateDog(){
+	document.getElementById("dog").src="../images/dogstatic.png";
+}
+
