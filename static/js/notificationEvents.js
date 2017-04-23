@@ -111,6 +111,7 @@ function addToFacebank(name) {
 		descripion = "New Challenger!"
 	}
 	faceBank[name] = createNotification(name, description, url);
+	console.log("ADDED TO FACEBANK");
 }
 
 /*
