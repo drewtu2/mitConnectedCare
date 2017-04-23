@@ -49,7 +49,6 @@ function handleNotification(message) {
 		// jsonstuff = JSON.parse(message);
 		// addToFacebank(jsonstuff["data"][0], "", jsonstuff["data"][1])
 		addToFacebank(message.substring(12))
-		displayFacebank()
 	}
 }
 
