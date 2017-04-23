@@ -39,7 +39,7 @@
 	<script
 		src="{{ url_for('static', filename='data/filteredCrimeData.json') }}"></script>
 	<script src="{{ url_for('static', filename='js/Heatmap.js') }}"></script>
-	
+
 </head>
 
 <body onload="javascript:initGeolocation()">
@@ -55,6 +55,7 @@
 
 	<div id="video">
 		<!-- Uncomment to allow background to be set -->
+		{{video}}
 		<!--<img id="stream"
 			 src="http://192.168.1.9:88/cgi-bin/CGIStream.cgi?cmd=GetMJStream&usr=nuvision&pwd=nuvision"></img>-->
 	</div>
