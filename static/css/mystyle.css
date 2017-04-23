@@ -85,6 +85,9 @@ footer {
 
 #video{
 	background-color: blue;
+	background-image: url("../images/mitlogo.png");
+	background-repeat: no-repeat;
+	background-size: cover;
 	height: 100%;
 	width: 100%;
 	margin-left: 0px;

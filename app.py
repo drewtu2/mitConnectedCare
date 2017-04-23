@@ -22,6 +22,10 @@ def index():
 def getImg(filename):
     return app.send_static_file('images/' + filename)
 
+@app.route('/data/facebank/<filename>/')
+def getData(filename):
+    return app.send_static_file('data/facebank/' + filename)
+
 @app.route('/dashboard/', methods=['GET'])
 def dashboard():
     if "command" in request.args:
