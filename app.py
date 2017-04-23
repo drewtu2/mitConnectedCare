@@ -10,23 +10,23 @@ socketio = SocketIO(app)
 
 @app.route('/')
 def index():
-    return render_template("index.html")
+      return render_template("index.html")
 
 @app.route('/images/<filename>/')
 def getImg(filename):
-  return app.send_static_file('images/' + filename)
+    return app.send_static_file('images/' + filename)
 
 @app.route('/dashboard/', methods=['GET'])
 def dashboard():
-  if "command" in request.args:
-    command = request.args['command']
-    sendCommand(command)
-  return render_template('dashboard.html')
+    if "command" in request.args:
+      command = request.args['command']
+      sendCommand(command)
+    return render_template('dashboard.html')
 
 @socketio.on('channel-a')
 def sendCommand(message):
-    socketio.emit("channel-a", message)
+  socketio.emit("channel-a", message)
 
-if __name__ == '__main__':
+  if __name__ == '__main__':
     app.debug = True
     socketio.run(app, port=5000)
