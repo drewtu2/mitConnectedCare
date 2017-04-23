@@ -99,6 +99,7 @@ function deactivateNotif(id) {
  * }
  */
 
+
 /*
  * Adds/updates a person to the faceBank
  */
