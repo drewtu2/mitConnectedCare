@@ -78,7 +78,7 @@
         center: myLatLng,
         zoomControl: true,
         mapTypeControl: false,
-        scaleContro: false,
+        scaleControl: false,
         fullscreenControl: false,
         rotateControl: false,
         streetViewControl: false,
