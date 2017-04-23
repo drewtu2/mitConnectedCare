@@ -41,37 +41,6 @@
 			href="{{ url_for('static', filename='css/notify-osd.css') }}">
 	<script
 		src="{{ url_for('static', filename='data/filteredCrimeData.json') }}"></script>
-	<script src="{{ url_for('static', filename='js/Heatmap.js') }}"></script>
-	<script src="{{ url_for('static', filename='js/notify-osd.js') }}"></script>
-	<script src="jquery.tmpl.js" type="text/javascript"></script>
-
-
-  <script type="text/javascript">
-  $(document).ready(function() {
-
-    var clientData = [
-        { title: "Rey Bango", url:"../images/wine.png", discription:"test"}
-    ];
-
-
-$("#notificationTemplate").tmpl(clientData).appendTo( "notificationarea" );
-
-
-});
-  </script>
-
-
-	<script id="notificationTemplate" type="text/html">
-		<div class="row notification">
-				<div class="col-md-3">
-						<div class="picture">
-							<img scr="{{ url_for('static', filename=${url}) }}">
-						</div>
-				</div>
-				<div class="col-md-9 text_notifaction">
-						<strong>${title}</strong><br>
-							<span>${discription}</span>
-	</script>
 
 
 
@@ -108,28 +77,6 @@ $("#notificationTemplate").tmpl(clientData).appendTo( "notificationarea" );
 							src="{{ url_for('static', filename='images/dogstatic.png') }}">
 					</div>
 				</div>
-
-<<<<<<< HEAD
-        <div id = "notificationarea">
-
-
-            <!--- <div class="row notification">
-                <div class="col-md-3">
-                    <div class="picture">
-                        <div id="thepic">
-                          <h3>Pic</h3>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-9 text_notifaction">
-                    <strong>User Name</strong><br>
-                      <span>info</span>
-                </div> -->
-
-        </div>
-
-				<div id="facebankContainer"></div>
-=======
 				<div id="notificationarea">
 					<!-- <div class="row notification">
 						<div class="col-md-3">
@@ -145,9 +92,8 @@ $("#notificationTemplate").tmpl(clientData).appendTo( "notificationarea" );
 					</div> -->
 				</div>
 				<div id="facebankContainer">
-				
+
 				</div>
->>>>>>> 9866ffe6caff48426c2ba1f3aa1a3fc222d35ba9
 			</div>
 		</div>
 	</div>
