@@ -1,7 +1,12 @@
+from gevent import monkey
+monkey.patch_all()
 from flask import Flask
 from flask import render_template
 from flask import request
+from flask_socketio import SocketIO, emit
 app = Flask(__name__)
+app.config['SECRET_KEY'] = 'secret!'
+socketio = SocketIO(app)
 
 @app.route('/')
 def index():
@@ -18,5 +23,10 @@ def dashboard():
     sendCommand(command)
   return render_template('dashboard.html')
 
-def sendCommand(command):
-  socketio.emit("channel-a", command)
+@socketio.on('channel-a')
+def sendCommand(message):
+    socketio.emit("channel-a", message)
+
+if __name__ == '__main__':
+    app.debug = True
+    socketio.run(app, port=5000)

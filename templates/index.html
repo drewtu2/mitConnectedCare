@@ -1,8 +1,8 @@
 <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/socket.io/1.3.6/socket.io.min.js"></script>
 <script type="text/javascript" charset="utf-8">
-    console.log("HERE WE ARE");
     var socket = io.connect('http://' + document.domain + ':' + location.port);
     socket.on('channel-a', function(message) {
+        console.log("COMMAND RECEIVED: " + message);
         if (message == "displayOn") {
 
         } else if (message == "displayOff") {
