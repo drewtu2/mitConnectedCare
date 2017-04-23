@@ -60,6 +60,7 @@ function handleNotification(message) {
 		// jsonstuff = JSON.parse(message);
 		// addToFacebank(jsonstuff["data"][0], "", jsonstuff["data"][1])
 		addToFacebank(message.substring(12))
+		displayFacebank();
 		window.setTimeout(displayFacebank, 3000);
 		window.setTimeout(displayFacebank, 5000);
 		window.setTimeout(displayFacebank, 7000);
