@@ -1,12 +1,24 @@
 # mitConnectedCare
 
-Mark was here'
+## Setup
+1. Clone the repository: 
+  ```git clone https://github.com/drewtu2/mitConnectedCare.git```
+2. Initialize Submodule Dependencies (requires github SSH keys)
+  ```
+  git submodule update --init --recursive  
+  cd kairos-face-sdk-python
+  pip install .  
+  ```  
+3. Install the rest of the pip requirements from requirements.txt
+  ```
+  cd ..  
+  pip install -r requirements.txt  
+  ```
+3. Set up the flask app variable
+  ```
+  export FLASK_APP=app.py
+  ```
 
-Nice apostrophe mark.
-
-1. Clone the repository  
-2. git submodule update --init --recursive  
-3. cd kairos-face-sdk-python  
-4. pip install .  
-5. cd ..  
-6. pip install -r requirements.txt  
+## Running Server
+1. Run `flask run`
+2. Go to: [http://127.0.0.1:5000/index.html]
