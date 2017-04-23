@@ -44,9 +44,11 @@ function handleNotification(message) {
 		recMarkerList = []
 	} else if (message == "removeFacebank") {
 		wipeFacebank();
-	} else {// is a facedata from message!
-		jsonstuff = JSON.parse(message);
-		addToFacebank(jsonstuff["data"][0], "", jsonstuff["data"][1])
+	} else if (message.substring(0, 12) == "image_match_") {// is a facedata from message!
+		console.log("ELSE CASE: " + message)
+		// jsonstuff = JSON.parse(message);
+		// addToFacebank(jsonstuff["data"][0], "", jsonstuff["data"][1])
+		addToFacebank(message.substring(12))
 		displayFacebank()
 	}
 }
@@ -72,7 +74,7 @@ function deactivateNotif(id) {
 	document.getElementById(id).innerHTML = "";
 }
 
-/* 
+/*
  * A notification is a
  * {
  * 	title:<string>,
@@ -84,25 +86,27 @@ function deactivateNotif(id) {
 /*
  * Adds/updates a person to the faceBank
  */
-function addToFacebank(name, descripion, url) {
+function addToFacebank(name) {
+	var url = "../data/facebank/" + name + "Banked.jpg";
+	description = "";
 	switch (name) {
 	case "Andrew":
-		descripion = "Northeastern Student"
+		description = "Northeastern Student"
 		break;
 	case "Mark":
-		descripion = "Northeastern Student"
+		description = "Northeastern Student"
 		break;
 	case "Paul":
-		descripion = "Northeastern Student"
+		description = "Northeastern Student"
 		break;
 	case "Nick":
-		descripion = "Northeastern Student"
+		description = "Northeastern Student"
 		break;
 	case "Meg":
-		descripion = "MIT Design student and Mentor"
+		description = "MIT Design student and Mentor"
 		break;
 	case "Federico":
-		descripion = "Director of MIT Media Labs"
+		description = "Director of MIT Media Labs"
 		break;
 	default:
 		descripion = "New Challenger!"

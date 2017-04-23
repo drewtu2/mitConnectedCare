@@ -61,7 +61,7 @@ def processImage():
         banked = still.crop((topLeftX, topLeftY, topLeftX + width, topLeftY + height))
         #scaled = banked.thumbnail(100, Image.ANTIALIAS)
         banked.save(output + person + "Banked.jpg")
-        app.sendCommand(json.loads(json.dumps({"command":"new_bank", "data":(person, output + person + "Banked.jpg")})))
+        app.sendCommandAPI(person, output)
         print data
         print "Recognized " + person + ". Hi " + person + "!"
     except Exception as e:
