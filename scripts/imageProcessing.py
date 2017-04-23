@@ -58,7 +58,7 @@ def processImage():
         still = Image.open(latestImage)
         banked = still.crop((topLeftX, topLeftY, topLeftX + width, topLeftY + height))
         banked.save(output + person + "Banked.jpg")
-        app.sendCommand({"command":"new_bank", "data":(person, output + person + "Banked.jpg")})
+        app.sendCommand(json.dumps(json.loads({"command":"new_bank", "data":(person, output + person + "Banked.jpg")})))
         print data
         print "Recognized " + person + ". Hi " + person + "!"
     except:
