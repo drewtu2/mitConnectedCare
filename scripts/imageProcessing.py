@@ -50,6 +50,7 @@ def processImage():
     recognized_faces = ""
     try:
         data = kairos_face.recognize_face(file=latestImage, gallery_name='nuvision')
+        print data
         topLeftY = data[u'images'][0][u'transaction'][u'topLeftY']
         topLeftX = data[u'images'][0][u'transaction'][u'topLeftX']
         width = data[u'images'][0][u'transaction'][u'width']
@@ -58,8 +59,9 @@ def processImage():
         still = Image.open(latestImage)
         banked = still.crop((topLeftX, topLeftY, topLeftX + width, topLeftY + height))
         banked.save(output + person + "Banked.jpg")
-        app.sendCommand(json.dumps(json.loads({"command":"new_bank", "data":(person, output + person + "Banked.jpg")})))
+        app.sendCommand(json.loads(json.dumps({"command":"new_bank", "data":(person, output + person + "Banked.jpg")})))
         print data
         print "Recognized " + person + ". Hi " + person + "!"
-    except:
+    except Exception as e:
+        print e
         print "No faces recognized."
