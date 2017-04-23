@@ -67,7 +67,7 @@ function handleNotification(message) {
 	}
 	} catch (error) {
 		console.log(error);
-	} 
+	}
 }
 
 function activateDog() {
@@ -100,11 +100,15 @@ function deactivateNotif(id) {
  * }
  */
 
+
 /*
  * Adds/updates a person to the faceBank
  */
 function addToFacebank(name) {
-	var url = "../data/facebank/" + name + "Banked.jpg";
+	max = 9999999999999999;
+	min = 1000000000000000;
+	var id = Math.floor(Math.random() * (max - min)) + min;
+	var url = "../data/facebank/" + name + "Banked.jpg?id="+id;
 	description = "";
 	switch (name) {
 	case "Andrew":
