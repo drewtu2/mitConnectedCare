@@ -54,44 +54,43 @@
 	<!---------- /Navbar -------- -->
 
 	<div id="video">
-		<!-- Uncomment to allow background to be set -->
-    
-    {{video}}
+		<!-- Uncomment to allow background video to be set -->
 		<img id="stream"
 			 src="http://192.168.1.9:88/cgi-bin/CGIStream.cgi?cmd=GetMJStream&usr=nuvision&pwd=nuvision"></img>
-		 <img width="100%" src="{{ url_for('static', filename='images/mitlogo.png') }}">
+		<img width="100%" src="{{ url_for('static', filename='images/mitlogo.png') }}">
 	</div>
 
 	<div class="container no-margin content full-height">
 		<div class="row inherit-height">
 			<div class="col-md-3 inherit-height">
-				<div class = "circle" id="map_box" class="row"></div>
+				<div class="circle" id="map_box" class="row"></div>
 			</div>
 			<div class="col-md-6"></div>
 			<div class="col-md-3">
-        <div class="row">
-				<div id="assistance_box">
-					<img id="dog" width=100%
-						src="{{ url_for('static', filename='images/dogstatic.png') }}">
+				<div class="row">
+					<div id="assistance_box">
+						<img id="dog" width=100%
+							src="{{ url_for('static', filename='images/dogstatic.png') }}">
+					</div>
 				</div>
-      </div>
 
-        <div id = "notificationarea">
-            <div class="row notification">
-                <div class="col-md-3">
-                    <div class="picture">
-                        <div id="thepic">
-                          <h3>Pic</h3>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-9 text_notifaction">
-                    <strong>User Name</strong><br>
-                      <span>info</span>
-                </div>
-        </div>
-        </div>
-				<div id="info" style="background-color: red"></div>
+				<div id="notificationarea">
+					<div class="row notification">
+						<div class="col-md-3">
+							<div class="picture">
+								<div id="thepic">
+									<h3>Pic</h3>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-9 text_notifaction">
+							<strong>User Name</strong><br> <span>info</span>
+						</div>
+					</div>
+				</div>
+				<div id="facebankContainer">
+				
+				</div>
 			</div>
 		</div>
 	</div>

@@ -16,7 +16,7 @@ prod = 'PROD' in os.environ and os.environ['PROD'] in [1, 'true', 'True']
 
 @app.route('/')
 def index():
-    return render_template("index.html", video=video)
+    return render_template("index.html")
 
 @app.route('/images/<filename>/')
 def getImg(filename):

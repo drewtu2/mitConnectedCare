@@ -12,6 +12,8 @@ function handleNotification(message){
     	moveMap("home");
     } else if (message == "danger") {
 		// Alert to Danger!
+    	notif = createNotif("Warning", "You are nearing a high crime area!", "../images/warning64.png")
+    	activateNotif("notificationarea", notif)
     } else if (message == "dropLocation") {
     	index = count
     	recMarkerList.push(apiDropMarker(recList[index]))
@@ -37,6 +39,15 @@ function activateDog(){
 
 function deactivateDog(){
 	document.getElementById("dog").src="../images/dogstatic.png";
+}
+
+function activateNotif(id, notifModel){
+	document.getElementById(id).appendChild(viewNotif(notifModel));
+	window.setTimeout(function{deactivateNotif(id)}, 5000);
+}
+
+function deactivateNotif(id){
+	document.getElementById(id).appendChild(emptyNotif);
 }
 
 /* 
@@ -86,4 +97,16 @@ function createNotification(title, description, url){
 			"url": url}
 	
 	return obj
+}
+
+function displayFacebank(){
+	faceBank.forEach(function(value, index, array){displayFace(value)})
+}
+
+//TODO: Finish this function
+function viewNotif(notifModel)
+{
+	notifModel["title"],
+	notifModel["description"],
+	notifModel["url"]
 }
