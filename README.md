@@ -35,7 +35,11 @@ clean, concise manner overlayed into user vision.
   ```
   export FLASK_APP=app.py
   ```
-4. Camera: requires an IP camera on with MJPEG video stream on 192.168.1.9:88. 
+4. To turn on facial recognition
+  ```
+  export PROD=True
+  ```
+5. Camera: requires an IP camera on with MJPEG video stream on 192.168.1.9:88. 
 
 ## Running Simulation
 1. Run `flask run`
