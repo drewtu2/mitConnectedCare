@@ -53,3 +53,7 @@ Nuvision ultimate placed Top 5 at the Connected Care Hackathon. Competition was
 a mix of undergrads through PhD students. 
 - Slide Deck:
 - Video of presentation: 
+
+## TODO:
+- Clean Code with proper documentation
+- Add Links to presentations/videos
