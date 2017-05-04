@@ -55,5 +55,5 @@ a mix of undergrads through PhD students.
 - Video of presentation: 
 
 ## TODO: 
-~~- Clean Hackathon code with proper documentation. ~~
+~~ - Add better comments ~~
 - Add Links to README for documentation of results purposes
