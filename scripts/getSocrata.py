@@ -1,6 +1,15 @@
+"""
+Andrew Tu
+MIT Connected Care Hackathon 
+April 2017
+Python3
+"""
+
 import pandas as pd
 import subprocess
 import os
+
+# Filters and converts a csv of Boston crime data to a json object file. 
 
 #subprocess.call("../connected.setup", shell=True )
 

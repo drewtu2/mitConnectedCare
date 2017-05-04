@@ -1,8 +1,18 @@
+<!--
+  MIT Connected Care Hackathon 2017
+  April 2017
+  Author: Andrew Tu
+  Github: github.com/drewtu2
+-->
+
+
 <script type="text/javascript"
-		src="https://maps.googleapis.com/maps/api/js?&libraries=visualization">
+	src="https://maps.googleapis.com/maps/api/js?&libraries=visualization">
 		</script>
-<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/socket.io/1.3.6/socket.io.min.js"></script>
-<script type="text/javascript" src="{{ url_for('static', filename='js/notificationEvents.js') }}"></script>
+<script type="text/javascript"
+	src="//cdnjs.cloudflare.com/ajax/libs/socket.io/1.3.6/socket.io.min.js"></script>
+<script type="text/javascript"
+	src="{{ url_for('static', filename='js/notificationEvents.js') }}"></script>
 <script type="text/javascript" charset="utf-8">
 		console.log("INIT SOCKET")
     var socket = io.connect('http://' + document.domain + ':' + location.port);
@@ -19,28 +29,29 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>nuvision</title>
-	<meta charset="utf-8">
-  <!-- google open sans font-->
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
-	<!-- Boostrap CDN -->
-	<!-- Latest compiled and minified CSS -->
-	<link rel="stylesheet"
-		href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-	<!-- jQuery library -->
-	<script
-		src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
-	<!-- Latest compiled JavaScript -->
-	<script
-		src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<!-- /Boostrap CDN -->
+<title>nuvision</title>
+<meta charset="utf-8">
+<!-- google open sans font-->
+<link href="https://fonts.googleapis.com/css?family=Open+Sans"
+	rel="stylesheet">
+<!-- Boostrap CDN -->
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<!-- jQuery library -->
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+<!-- Latest compiled JavaScript -->
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- /Boostrap CDN -->
 
-	<link rel="stylesheet"
-		href="{{ url_for('static', filename='css/mystyle.css') }}">
-	<script
-		src="{{ url_for('static', filename='data/filteredCrimeData.json') }}"></script>
-	<script src="{{ url_for('static', filename='js/Heatmap.js') }}"></script>
+<link rel="stylesheet"
+	href="{{ url_for('static', filename='css/mystyle.css') }}">
+<script
+	src="{{ url_for('static', filename='data/filteredCrimeData.json') }}"></script>
+<script src="{{ url_for('static', filename='js/Heatmap.js') }}"></script>
 
 </head>
 
@@ -56,9 +67,9 @@
 	<!---------- /Navbar -------- -->
 
 	<div id="video">
-		<!-- Uncomment to allow background video to be set -->
+		<!-- Set background to camera stream -->
 		<img id="stream"
-			 src="http://192.168.1.9:88/cgi-bin/CGIStream.cgi?cmd=GetMJStream&usr=nuvision&pwd=nuvision"></img>
+			src="http://192.168.1.9:88/cgi-bin/CGIStream.cgi?cmd=GetMJStream&usr=nuvision&pwd=nuvision"></img>
 		<!-- <img width="100%" src="{{ url_for('static', filename='images/mitlogo.png') }}"> -->
 	</div>
 
@@ -89,8 +100,7 @@
 						</div>
 					</div> -->
 				</div>
-				<div id="facebankContainer">
-				</div>
+				<div id="facebankContainer"></div>
 			</div>
 		</div>
 	</div>

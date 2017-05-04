@@ -1,4 +1,10 @@
+# MIT Connected Care Hackathon 2017
+# April 2017
+# Author: Andrew Tu
+# Github: github.com/drewtu2
 
 CONNECTED_HOME=$(pwd)
 
 echo $CONNECTED_HOME
+
+export PROD=True
